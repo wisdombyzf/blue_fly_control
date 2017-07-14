@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forward"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/back"
+        android:text="右"/>
+
+    <Button
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="前"
+        android:layout_below="@+id/list"
+        android:layout_toRightOf="@+id/left"/>
+
+    <RelativeLayout
+        android:id="@+id/edit_bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/btn_disconnect"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="初始化"
+            android:layout_toLeftOf="@+id/MessageText"/>
+
+        <Button
+            android:id="@+id/btn_msg_send"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="发送字符串"
+            android:layout_alignParentTop="true"/>
+
+        <EditText
+            android:id="@+id/MessageText"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:hint="输入发送的字符"
+            android:textSize="15dip"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btn_msg_send"
+            android:layout_marginRight="31dp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左"
+        android:layout_marginLeft="51dp"
+        android:layout_alignBaseline="@+id/right"
+        android:layout_alignBottom="@+id/right"
+        android:layout_toRightOf="@+id/list"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="后"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/right"
+        android:layout_toRightOf="@+id/left"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/edit_bottombar"
+        android:layout_weight="1.0"
+        android:divider="#ffc6c6c6"
+        android:scrollingCache="false"
+        android:visibility="gone"/>
+
+    <SeekBar
+        android:id="@+id/accelerate"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_bottombar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp"
+        android:max="1000"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="油门"
+        android:layout_above="@+id/accelerate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/back"
+        android:text="值"/>
+
+
+</RelativeLayout>
